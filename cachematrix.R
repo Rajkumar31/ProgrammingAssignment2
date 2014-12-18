@@ -49,4 +49,12 @@ cacheSolve <- function(x, ...) {
                 message("getting cached data")
                 return(inverse)
         }
+        
+        # If cache value is null, caclulate the inverse and store it in the cache
+        data <- y$getMatrix()
+        inverse <- solve(data)
+        y$cacheInverse(inverse)
+        
+        # Finally return the inverse
+        inverse
 }
