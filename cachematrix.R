@@ -10,15 +10,28 @@ makeCacheMatrix <- function(x = matrix()) {
         
         # store a matrix
         setMatrix <- function(newValue) {
-        x <<- newValue
-        # since the matrix is assigned a new value, flush the cache
-        cache <<- NULL
+                x <<- newValue
+                # since the matrix is assigned a new value, flush the cache
+                cache <<- NULL
         }
 
-        # returns the stored matrix
+        # output the matrix
         getMatrix <- function() {
-        x
+                x
         }
+        
+        # cache the passed value
+        cacheInverse <- function(solve) {
+                cache <<- solve
+        }
+
+        # Access the cached value
+        getInverse <- function() {
+                cache
+        }
+        
+        # return a list consisting of functions
+        list(setMatrix = setMatrix, getMatrix = getMatrix, cacheInverse = cacheInverse, getInverse = getInverse)
 }
 
 
