@@ -36,7 +36,6 @@ makeCacheMatrix <- function(x = matrix()) {
         list(setMatrix = setMatrix, getMatrix = getMatrix, cacheInverse = cacheInverse, getInverse = getInverse)
 }
 
-
 ## CacheSolve matrix is used to compute the inverse of the matrix after getting the matrix from cache
 
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. If the inverse has
