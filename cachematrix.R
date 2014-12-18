@@ -4,6 +4,7 @@
 ## 3) Set the value of the mean
 ## 4) Get the value of the mean
 
+## This function creates a special "matrix" object that can cache its inverse.
 makeCacheMatrix <- function(x = matrix()) {
         # initially nothing is cached so set it to NULL and it is used to hold cache
         cache <- NULL
@@ -36,6 +37,9 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## CacheSolve matrix is used to compute the inverse of the matrix after getting the matrix from cache
+
+## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. If the inverse has
+## already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
         # get the cached value
